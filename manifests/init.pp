@@ -22,6 +22,8 @@ class systemd (
     refreshonly => true,
   }
 
-  include ::systemd::logind
+  if $managed_logind {
+    include ::systemd::logind
+  }
 
 }
